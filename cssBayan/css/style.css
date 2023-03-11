@@ -58,14 +58,26 @@ body {
   display: block;
 }
 
-.page__mem-name {
-  position: relative;
-  display: block;
-  font-size: 2rem;
+.page__subject {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.1rem solid gray;
+}
+
+.page__caption {
+  font-size: 1.9rem;
   font-weight: 800;
   letter-spacing: 0.1rem;
-  padding: 2rem;
-  border-top: 0.1rem solid gray;
+  padding: 1.6rem;
+}
+
+.page__decor {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  opacity: 0;
+  transition: transform 0.35s linear, opacity 0.15s ease-in-out;
 }
 
 .page__image {
@@ -73,8 +85,7 @@ body {
   max-height: 0;
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0.6s ease-in-out;
-  transition: opacity 0.7s ease-in-out;
+  transition: opacity 0.35s ease-in-out 0.1s;
 }
 
 .page__input:checked + .page__item .page__image {
@@ -84,7 +95,7 @@ body {
   margin-bottom: 1rem;
 }
 
-.page__img {
+.page__pic {
   max-height: 25rem;
   max-width: 28rem;
 }
@@ -94,12 +105,11 @@ body {
     font-size: 2.6rem;
   }
 
-  .page__mem-name {
+  .page__caption {
     font-size: 1.8rem;
-    padding: 1.8rem;
   }
 
-  .page__img {
+  .page__pic {
     max-height: 38rem;
     max-width: 45.5rem;
   }
@@ -112,9 +122,8 @@ body {
     color: black;
   }
 
-  .page__mem-name {
+  .page__caption {
     font-size: 1.6rem;
-    padding: 1.5rem;
   }
 
   .page__content:hover {
@@ -132,20 +141,12 @@ body {
     margin-bottom: 1rem;
   }
 
-  .page__content:hover .page__item .page__mem-name::after {
-    content: url(../images/decor/plus.svg);
-    display: inline-block;
-    width: 1.6rem;
-    height: 1.6rem;
-    position: absolute;
-    right: 0.7rem;
-    top: 0.7rem;
-    transition: transform 0.35s linear;
-  }
-
-  .page__content:hover .page__input:checked + .page__item .page__mem-name::after {
+  .page__content:hover .page__input:checked + .page__item .page__subject .page__decor {
     width: 1.7rem;
     height: 1.7rem;
     transform: rotate(45deg);
+  }
+  .page__content:hover .page__item .page__subject .page__decor {
+    opacity: 1;
   }
 }
