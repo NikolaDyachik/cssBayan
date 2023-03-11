@@ -88,3 +88,67 @@ body {
   max-height: 25rem;
   max-width: 28rem;
 }
+
+@media (min-width: 576px) {
+  .page__title {
+    font-size: 2.6rem;
+  }
+
+  .page__mem-name {
+    font-size: 1.8rem;
+    padding: 1.8rem;
+  }
+
+  .page__img {
+    max-height: 38rem;
+    max-width: 45.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .page__title {
+    font-size: 2.8rem;
+    cursor: default;
+    color: black;
+  }
+
+  .page__mem-name {
+    font-size: 1.6rem;
+    padding: 1.5rem;
+  }
+
+  .page__content:hover {
+    color: #000;
+  }
+
+  .page__content:hover .page__item {
+    cursor: pointer;
+  }
+
+  .page__item:hover .page__image {
+    max-height: 40rem;
+    visibility: visible;
+    opacity: 1;
+    margin-bottom: 1rem;
+  }
+
+  .page__content:hover .page__item .page__mem-name::after {
+    content: url(../images/decor/plus.svg);
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    right: 0.7rem;
+    top: 0.7rem;
+  }
+
+  .page__content:hover .page__input:checked + .page__item .page__mem-name::after {
+    content: url(../images/decor/xmark.svg);
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    right: 0.7rem;
+    top: 0.7rem;
+  }
+}
