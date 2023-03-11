@@ -34,3 +34,57 @@ body {
   margin: 0 auto;
   padding: 0 1.5rem;
 }
+
+.page__title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  padding-block: 1.5rem;
+  color: blue;
+}
+
+.page__content {
+  min-width: 20rem;
+  color: blue;
+  transition: color 0.1s ease-in;
+}
+
+.page__input {
+  display: block;
+  cursor: pointer;
+  appearance: none;
+}
+
+.page__item {
+  display: block;
+}
+
+.page__mem-name {
+  position: relative;
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  padding: 2rem;
+  border-top: 0.1rem solid gray;
+}
+
+.page__image {
+  text-align: center;
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.55s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.page__input:checked + .page__item .page__image {
+  max-height: 40rem;
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 1rem;
+}
+
+.page__img {
+  max-height: 25rem;
+  max-width: 28rem;
+}
