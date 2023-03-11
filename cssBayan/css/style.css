@@ -1,0 +1,152 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+html {
+  /* 62.5% of 16px browser font size is 10px */
+  font-size: 62.5%;
+}
+body {
+  background-color: floralwhite;
+  font-family: sans-serif;
+}
+
+[class*="__container"] {
+  max-width: 108.7rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.page__title {
+  font-size: 2.4rem;
+  font-weight: 900;
+  padding-block: 1.5rem;
+  color: blue;
+}
+
+.page__content {
+  min-width: 20rem;
+  color: blue;
+  transition: color 0.1s ease-in;
+}
+
+.page__input {
+  display: block;
+  cursor: pointer;
+  appearance: none;
+}
+
+.page__item {
+  display: block;
+}
+
+.page__subject {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.1rem solid gray;
+}
+
+.page__caption {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  padding: 1.6rem;
+}
+
+.page__decor {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+  opacity: 0;
+  transition: transform 0.35s linear, opacity 0.15s ease-in-out;
+}
+
+.page__image {
+  text-align: center;
+  max-height: 0;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out 0.1s;
+}
+
+.page__input:checked + .page__item .page__image {
+  max-height: 40rem;
+  visibility: visible;
+  opacity: 1;
+  margin-bottom: 1rem;
+}
+
+.page__pic {
+  max-height: 25rem;
+  max-width: 28rem;
+}
+
+@media (min-width: 576px) {
+  .page__title {
+    font-size: 2.6rem;
+  }
+
+  .page__caption {
+    font-size: 1.8rem;
+  }
+
+  .page__pic {
+    max-height: 38rem;
+    max-width: 45.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .page__title {
+    font-size: 2.8rem;
+    cursor: default;
+    color: black;
+  }
+
+  .page__caption {
+    font-size: 1.6rem;
+  }
+
+  .page__content:hover {
+    color: #000;
+  }
+
+  .page__content:hover .page__item {
+    cursor: pointer;
+  }
+
+  .page__item:hover .page__image {
+    max-height: 40rem;
+    visibility: visible;
+    opacity: 1;
+    margin-bottom: 1rem;
+  }
+
+  .page__content:hover .page__input:checked + .page__item .page__subject .page__decor {
+    width: 1.7rem;
+    height: 1.7rem;
+    transform: rotate(45deg);
+  }
+  .page__content:hover .page__item .page__subject .page__decor {
+    opacity: 1;
+  }
+}
